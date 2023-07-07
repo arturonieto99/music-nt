@@ -1,20 +1,29 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
+<ion-header >
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+<ion-content >
+
+  <swiper-container
+   [initialSlide]="1"
+   >
+
+    <swiper-slide>
+      <h1  class="my-favorite-color">Titulo principal </h1>
+      <img src="https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800"alt="">
+      <ion-icon class="slide-icon" name="american-football-outline"></ion-icon>
+      
+      <p> HOla soy la explicacion del slide,HOla soy la explicacion del slide</p>
+    </swiper-slide>
+
+    <swiper-slide>
+      <h1>Titulo secundario</h1>
+      <ion-icon name="american-football-outline"></ion-icon>
+      <p> HOla soy la explicacion del slide,HOla soy la explicacion del slide</p>
+    </swiper-slide>
+
+
+
+  </swiper-container>
+
 </ion-content>
