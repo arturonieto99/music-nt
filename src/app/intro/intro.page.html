@@ -1,0 +1,46 @@
+<ion-header >
+</ion-header>
+
+
+<ion-content >
+<ion-icon name="close" class="close-icon"(click)="finish()" ></ion-icon>
+  <swiper-container
+   [initialSlide]="0"
+   >
+
+    <swiper-slide *ngFor="let slide of slides">
+      <h1  class="my-favorite-color">{{slide.title}} </h1>
+      <img src={{slide.img}} />
+      <ion-icon class="slide-icon" name="{{slide.icon}}"></ion-icon>
+      <p>{{slide.description}}</p>
+  
+    </swiper-slide>
+<!--   
+    <swiper-slide>
+      <h1  class="my-favorite-color">Deportes </h1>
+      <img src="assets/imagenes/depor.jpg">
+      <p> Actividad o ejercicio físico, sujeto a determinadas normas, en que se hace prueba, 
+        con o sin competición, de habilidad, destreza o fuerza física.</p>
+        <ion-icon name="football"></ion-icon>
+    </swiper-slide>
+    
+    <swiper-slide>
+      <h1  class=>Cultura </h1>
+      <img src="https://www.somosiberoamerica.org/wp-content/uploads/2022/09/Onda-Pais-Imagen-destacada.jpg">
+      <p class="l1"> Conjunto de conocimientos, ideas, tradiciones y costumbres que caracterizan 
+        a un pueblo, a una clase social, a una época, etc</p>
+    </swiper-slide>
+    
+    <swiper-slide>
+      <h1  class="my-favorite-color">Musica </h1>
+      <img src="https://definicion.de/wp-content/uploads/2010/01/partitura.jpg">
+      <ion-icon name="musical-notes"></ion-icon>
+      <p>  Arte de combinar los sonidos de la voz humana o de los instrumentos, o de unos y otros a la
+         vez, de suerte que produzcan deleite, conmoviendo la sensibilidad, ya sea alegre, ya tristemente.</p>
+    </swiper-slide>-->
+
+  </swiper-container>
+
+</ion-content>
+
+
