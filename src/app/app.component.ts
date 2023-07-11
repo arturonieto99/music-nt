@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { register} from 'swiper/element/bundle';
-
+import { Storage } from '@ionic/storage-angular';
+import { __await } from 'tslib';
 register();
 
 @Component({
@@ -9,5 +10,10 @@ register();
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private storage: Storage) {}
+async ngOnInit() {
+  await this.storage.create();
+}
+
+
 }
