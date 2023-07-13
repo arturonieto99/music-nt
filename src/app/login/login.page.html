@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <form [formGroup]="loginForm"(ngSubmit)="loginUser(loginForm.value)">
+  <ion-item>
+    <ion-input label="Email" labelPlacement="floating" 
+    placeholder="example@example.com" formControlName="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label >Password</ion-label>
+    <ion-input [type]="passwordType" labelPlacement="floating"  formControlName="password"></ion-input>
+    <ion-icon name="eye" [color]="passwordShown=== true ? 'dark' : 'gray' " item-end 
+  (click)="tooglePassword()" ></ion-icon>
+  </ion-item>
+
+  <div class="validation-erros">
+    <ng-container *ngFor="let validation of validation_messages.email">
+      <div *ngIf="(
+        loginForm.get('email')?.hasError(validation.type) && 
+        loginForm.get('email')?.dirty) 
+      ">
+        {{validation.message}}
+      </div>
+      
+    </ng-container>
+  </div>
+  
+  <ion-button
+    expand="full"
+    shape="round"
+    [disabled]="!loginForm.valid"
+    type="submit"
+    >Login 
+  </ion-button>
+  
+
+ </form>
+</ion-content>
