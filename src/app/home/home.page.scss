@@ -34,3 +34,14 @@ ion-content{
    --background: var(--my-color-fondo);
    --keyboard-offset:var(--keyboard-offset);
 }
+
+ion-avatar{
+   height: 100px;
+   width: 100px;
+}
+swiper-slide{
+   height: 120px;
+}
+.album-style {
+   --border-radius: 4px;
+}
