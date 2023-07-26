@@ -83,7 +83,7 @@ export class LoginPage implements OnInit {
     toast.present()
   }
 
-  async presentAlert1() {
+ /* async presentAlert1() {
     const alert = await this.alertController.create({
       header: "AVISO",
       message: "ha ocurrido un error, usuario o contraseña incorrecta",
@@ -92,20 +92,32 @@ export class LoginPage implements OnInit {
     await alert.present()
     let result = await alert.onDidDismiss();
     console.log(result);
-  }
+  }*/
 
-  loginUser(credentials: any) {
-    console.log(credentials);
-    this.authService.loginUser(credentials).then(res => {
+  loginUser(credentials: any){
+    console.log("Credenciales",credentials);
+    this.authService.loginUser(credentials).then((res: any) => {
       this.errorMessage = "";
       this.storage.set("isUserLoggedIn", true);
+      this.storage.set("user_id", res.id)
       this.navCtril.navigateForward("/menu/home");
     }).catch(err => {
-      
       this.errorMessage = err;
       console.log(this.errorMessage);
     })
   }
+   
+  async presentAlert(header: string, subHeader:string, message:string){
+    const alert = await this.alertController.create({
+      header: header,
+      subHeader: subHeader,
+      message: message,
+      buttons: ['OK']
+    });
+
+    await alert.present();
+  }
+
   goToRegister() {
     this.navCtril.navigateForward("/register")
   }

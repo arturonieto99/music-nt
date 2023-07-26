@@ -10,7 +10,6 @@
 </ion-header>
 
 <ion-content class="background">
-  
   <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm.value)">
     
     <ion-item>
@@ -32,15 +31,12 @@
     <ion-item>
       <ion-input label="Last Name" labelPlacement="floating" placeholder="Apellido"   [clearInput]= "true"  required="required" formControlName="last_name"></ion-input>
     </ion-item>
-
-    
+   
 <ion-button
 type="submit"
-
 (click)="!registerForm.valid">
   Registrarse
 </ion-button>
-
 </form>
 </ion-content>
 

@@ -14,7 +14,7 @@ const routes: Routes = [
     loadChildren: () => import('./intro/intro.module').then(m => m.IntroPageModule)
   },
   {
-    path: 'login',
+    path: 'login', canActivate:[LoginGuard],
     loadChildren: () => import('./login/login.module').then(m => m.LoginPageModule)
   },
   {
